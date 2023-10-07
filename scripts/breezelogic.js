@@ -1,6 +1,6 @@
 //Synopsis: Copies aura buffs between actors in the Pathfinder 1.E system in FoundryVTT
 //
-//Create by:   Jeremy/Cactuar       
+//Create by:   Fiona       
 //Date:         4/19/23
 //
 //Details:
@@ -11,7 +11,14 @@
 //        name       value
 //       radius        xx
 
-export class AuraLogic{
+export class BreezeLogic{
+
+    static async applyHealing(parentToken){
+        return;
+    }
+
+
+
 
     static async refreshAuras(parentToken, childTokens, deleteOnly){
         //Main loop to reresh auras on all tokens relative to the parent token.
