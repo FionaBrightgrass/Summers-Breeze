@@ -1,5 +1,3 @@
-import { SummersBreezeMenu } from './menu.js';
-
 export class Settings {
     static registerSettings() {
             game.settings.register('summersbreeze', 'Enabled', {

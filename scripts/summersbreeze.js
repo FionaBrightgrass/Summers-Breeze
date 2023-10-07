@@ -1,4 +1,4 @@
-import { breezelogic } from './breezelogic.js';
+import { BreezeLogic } from './breezelogic.js';
 import { Settings } from './settings.js';
 import { Utils } from './utils.js';
 
@@ -31,7 +31,7 @@ Hooks.on('canvasTeardown', (_canvas) => {
     }
   });
 
-Hooks.on('combatTurn', async (combat, update, _options) => {
+Hooks.on('combatTurn', (combat, update, _options) => {
         console.log(combat);
         console.log(update);
         console.log("Fucking do shit");

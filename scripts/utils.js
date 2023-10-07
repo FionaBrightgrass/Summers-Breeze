@@ -1,8 +1,3 @@
-import { breezelogic } from './breezelogic.js';
-import { Settings } from './settings.js';
-
-
-let sceneTokens = [];
 export class Utils{
     static createTokenArray(){
         let tokens = canvas.tokens.placeables;

@@ -1,24 +1,15 @@
 //Synopsis: Copies aura buffs between actors in the Pathfinder 1.E system in FoundryVTT
 //
 //Create by:   Fiona       
-//Date:         4/19/23
+//Date:         10/7/23
 //
 //Details:
-// If an actor has a buff in their buffs tab that ends with (Received)
-// It will clone it to all allies within the radius of the aura.
-// Allied gets a 0 radius copy of the aura, which can't be copied to others. (radius > 0 is the trigger)
-// The radius needs to be set as a dictionary flag in the buff itself, as follows:        
-//        name       value
-//       radius        xx
 
 export class BreezeLogic{
 
     static async applyHealing(parentToken){
         return;
     }
-
-
-
 
     static async refreshAuras(parentToken, childTokens, deleteOnly){
         //Main loop to reresh auras on all tokens relative to the parent token.
