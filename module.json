@@ -1,0 +1,40 @@
+{
+    "id": "summersbreeze",
+    "name": "summersbreeze",
+    "title": "Summer's Breeze",
+    "description": "Automates A Custom Pathfinder Aura",
+    "version": "0.0.1",
+    "esmodules": [
+        "scripts/summersbreeze.js"
+      ],
+    "authors": [
+      {
+        "name": "Cactuar / Fiona",
+        "url": "https://github.com/FionaBrightgrass/Summers-Breeze",
+        "discord": "FionaBrightgrass"
+      }
+    ],
+    "relationships": {
+      "systems": [
+        {
+          "id": "pf1",
+          "type": "system",
+          "compatibility": {
+            "minimum": "0.82.5"
+          }
+		},
+        {
+          "id": "ffd20",
+          "type": "system",
+          "compatibility": {
+            "minimum": "10.0.0"
+          }
+        }
+      ]
+    },
+    "minimumCoreVersion": "10.0.0",
+    "compatibleCoreVersion": "10",
+    "url": "https://github.com/FionaBrightgrass/Summers-Breeze",
+    "manifest": "https://github.com/FionaBrightgrass/Summers-Breeze/raw/main/module.json",
+    "download": "https://github.com/FionaBrightgrass/Summers-Breeze/raw/main/module.zip"
+  }
