@@ -15,7 +15,7 @@ export class BreezeLogic{
         let turnToken = combat.combatant.token;
         let canvasTokens = canvas.tokens.placeables;
         let actor = turnToken.actor;
-        aura = (actor.items?.filter(o => o.system?.flags?.dictionary?.HoT > 0));
+        let aura = (actor.items?.filter(o => o.system?.flags?.dictionary?.HoT > 0));
         if(aura[0]){
             let HoTPotency = aura[0].system.flags.dictionary.HoTpotency;
             let HoTRadius = aura[0].system.flags.dictionary.HoTradius;
