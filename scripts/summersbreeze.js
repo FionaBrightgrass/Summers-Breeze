@@ -31,10 +31,10 @@ Hooks.on('canvasTeardown', (_canvas) => {
     }
   });
 
-Hooks.on('combatTurn', async (combat, update, _options, _userId) => {
-    if(Utils.shouldHandle()){
+Hooks.on('combatTurn', async (combat, update, _options) => {
+        console.log(combat);
         console.log(update);
-    }
+        console.log("Fucking do shit");
 });
 
 Hooks.on('pf1ToggleActorBuff',  async(actor, itemData) =>{

@@ -1,4 +1,4 @@
-import { AuraShareMenu } from './menu.js';
+import { SummersBreezeMenu } from './menu.js';
 
 export class Settings {
     static registerSettings() {

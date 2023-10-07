@@ -1,4 +1,4 @@
-export class AuraShareMenu extends FormApplication {
+export class SummersBreezeMenu extends FormApplication {
   getData() {
     return game.settings.get('summersbreeze', 'SummersBreezeShareMenu');
   }
