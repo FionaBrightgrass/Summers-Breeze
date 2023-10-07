@@ -4,9 +4,9 @@
 <strong>This mod is presently compatible with Pathfinder 1e</strong>  <br>
 
 
-Flags:
-HoTRadius > 0
-HoTpotency > 0
-HoTRounds > 0
-HoT > 0
+Flags:  <br>
+HoTRadius > 0  <br>
+HoTpotency > 0  <br>
+HoTRounds > 0  <br>
+HoT > 0  <br>
 
