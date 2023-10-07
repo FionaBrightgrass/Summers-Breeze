@@ -31,12 +31,18 @@ Hooks.on('canvasTeardown', (_canvas) => {
     }
   });
 
-Hooks.on('combatTurn', (combat, update, _options) => {
-        console.log(combat);
-        console.log(update);
-        console.log("Fucking do shit");
+Hooks.on('combatTurn', async (combat, update) => {
+	if (combat.started) {
+		BreezeLogic.AuraHoTUpdate(combat, update);
+        console.log("CombatTurn");
+	}
 });
-
+Hooks.on('combatRound', async (combat, update) => {
+	if (combat.started) {
+		BreezeLogic.AuraHoTUpdate(combat, update);
+        console.log("CombatRound");
+	}
+});
 Hooks.on('pf1ToggleActorBuff',  async(actor, itemData) =>{
     console.log("Fucking do shit");
 })

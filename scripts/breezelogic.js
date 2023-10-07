@@ -11,6 +11,44 @@ export class BreezeLogic{
         return;
     }
 
+    static async AuraHoTUpdate(combat, update) {
+        let turnToken = combat.combatant.token;
+        let canvasTokens = canvas.tokens.placeables;
+        let actor = turnToken.actor;
+        aura = (actor.items?.filter(o => o.system?.flags?.dictionary?.HoT > 0));
+        if(aura[0]){
+            let HoTPotency = aura[0].system.flags.dictionary.HoTpotency;
+            let HoTRadius = aura[0].system.flags.dictionary.HoTradius;
+            let rounds = aura[0].system.flags.dictionary.HoTrounds;
+            if(rounds > 0){
+                canvasTokens.forEach(canvasToken => {
+                    if (canvasToken.actor.disposition == turnToken.actor.disposition){
+                        let distance = canvas.grid.measureDistance(turnToken, canvasToken);
+                        if(distance >= HoTRadius){
+                            let currenthp = canvasToken.actor.data.data.attributes.hp.value;
+                            let maxHP = canvasToken.actor.data.data.attributes.hp.max;
+                            let newHPValue = (currenthp + HoTPotency);
+                            if (currenthp != maxHP){
+                                if (newHPValue >= maxHP) {
+                                    canvasToken.actor.update({"data.attributes.hp.value" : maxHP});
+                
+                                }else{
+                                    canvasToken.actor.update({"data.attributes.hp.value" : newHPValue});
+                                }
+                                AudioHelper.play({src: "https://assets.forge-vtt.com/5f513c51af628455315890ce/Regen.mp3", volume: 0.1, autoplay: true, loop: false}, true);
+                            }
+                        }
+                    }
+                });	
+            }
+            else{
+                console.log("Time's up");
+            }
+        }
+        return;
+    }
+
+
     static async refreshAuras(parentToken, childTokens, deleteOnly){
         //Main loop to reresh auras on all tokens relative to the parent token.
         //console.log(Date.now() + " Starting refreshAuras")
