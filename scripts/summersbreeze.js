@@ -34,15 +34,19 @@ Hooks.on('canvasTeardown', (_canvas) => {
 Hooks.on('combatTurn', async (combat, update) => {
 	if (combat.started) {
 		BreezeLogic.AuraHoTUpdate(combat, update);
-        console.log("CombatTurn");
+        //console.log("CombatTurn");
 	}
 });
 Hooks.on('combatRound', async (combat, update) => {
-	if (combat.started) {
+	if (combat.started && Utils.shouldHandle()) {
 		BreezeLogic.AuraHoTUpdate(combat, update);
-        console.log("CombatRound");
+        //console.log("CombatRound");
 	}
 });
+
 Hooks.on('pf1ToggleActorBuff',  async(actor, itemData) =>{
-    console.log("Fucking do shit");
+    if(Utils.shouldHandle() && itemData.getItemDictionaryFlag('HoTrounds') > 0){
+        //console.log(itemData);
+        BreezeLogic.ActivateHoT(actor, itemData);
+    }
 })
