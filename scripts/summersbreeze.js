@@ -45,7 +45,7 @@ Hooks.on('combatRound', async (combat, update) => {
 });
 
 Hooks.on('pf1ToggleActorBuff',  async(actor, itemData) =>{
-    if(Utils.shouldHandle() && itemData.getItemDictionaryFlag('HoTrounds') > 0){
+    if(itemData.getItemDictionaryFlag('HoTrounds') > 0){
         //console.log(itemData);
         BreezeLogic.ActivateHoT(actor, itemData);
     }
