@@ -4,6 +4,30 @@
 //Date:         10/7/23
 //
 //Details:
+let params =
+[{
+    filterType: "glow",
+    filterId: "mySuperSpookyGlow",
+    distance: 10,
+    outerStrength: 4,
+    autoDestroy: true,
+    innerStrength: 0,
+    color: 0x003000,
+    quality: 0.5,
+    padding: 10,
+    animated:
+    {
+        color: 
+        {
+           active: true, 
+           loopDuration: 2000, 
+           loops: 1,
+           animType: "colorOscillation", 
+           val1:0xFFFF20, 
+           val2:0xFFD040
+        }
+    }
+}];
 
 export class BreezeLogic{
     static async AuraHoTUpdate(combat, update) {
@@ -26,7 +50,7 @@ export class BreezeLogic{
                             //console.log(canvasToken);
                             let currenthp = canvasToken.actor.data.data.attributes.hp.value;
                             let maxHP = canvasToken.actor.data.data.attributes.hp.max;
-                            let newHPValue = (currenthp + HoTPotency);
+                            let newHPValue = (currenthp + Number(HoTPotency));
                             if (currenthp != maxHP){
                                 if (newHPValue >= maxHP) {
                                     canvasToken.actor.update({"data.attributes.hp.value" : maxHP});
@@ -35,7 +59,12 @@ export class BreezeLogic{
                                     canvasToken.actor.update({"data.attributes.hp.value" : newHPValue});
                                 }
                                 AudioHelper.play({src: "https://assets.forge-vtt.com/5f513c51af628455315890ce/Regen.mp3", volume: 0.05, autoplay: true, loop: false}, true);
+                                try{
+                                    TokenMagic.addFilters(canvasToken, params, false);
+                                }catch{
+                                }
                             }
+
                         }
                     }
                 });	

@@ -3,7 +3,7 @@
     "name": "summersbreeze",
     "title": "Summer's Breeze",
     "description": "Automates A Custom Pathfinder Aura",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "esmodules": [
         "scripts/summersbreeze.js"
       ],
